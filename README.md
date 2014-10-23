@@ -4,7 +4,7 @@ User Component
 What is User?
 -------------
 
-The Base User provides classes that are strictly non-application-specific and either non-domain-specific or cross multiple domains.
+The Base User provides classes releated to users that are strictly non-application-specific.
 
 Requirements
 ------------
@@ -24,8 +24,15 @@ Running tests
 You can run the unit tests with the following command:
 
     $ composer install
-    $ vendor/bin/phpunit
+    $ ./vendor/bin/phpunit
 
+To run tests on a different PHP version, you can use Docker:
+
+    $ docker run -it --rm -v "$(pwd)":/home/test -w /home/test php:5.6-cli php ./vendor/bin/phpunit
+
+To run QA tools such as code coverage
+
+    $ ant
 
 Contributing
 ------------
