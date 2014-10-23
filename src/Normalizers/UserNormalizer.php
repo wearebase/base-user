@@ -3,7 +3,6 @@
 namespace Base\User\Normalizers;
 
 use Base\User\Entities\User;
-use Base\Core\Extension\ExtensionCollection;
 
 use Symfony\Component\Serializer\Normalizer\SerializerAwareNormalizer;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
