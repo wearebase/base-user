@@ -11,6 +11,7 @@ class User
     protected $email;
     protected $password;
     protected $confirm;
+    protected $roles = [];
 
     public function setId($id)
     {
@@ -55,5 +56,15 @@ class User
     public function isPasswordMatching()
     {
         return $this->password === $this->confirm;
+    }
+
+    public function setRoles(array $roles)
+    {
+        $this->roles = $roles;
+    }
+
+    public function getRoles()
+    {
+        return $this->roles;
     }
 }

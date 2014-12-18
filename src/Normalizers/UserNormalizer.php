@@ -15,6 +15,7 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
         $data = [
             'email' => $object->getEmail(),
             'password' => $object->getPassword(),
+            'roles' => $object->getRoles(),
         ];
 
         $data = array_merge($data, $this->serializer->normalize(
@@ -40,6 +41,7 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
         $user = new User();
         $user->setEmail($data['email']);
         $user->setPassword($data['password']);
+        $user->setRoles($data['roles']);
 
         if (isset($data['confirm'])) {
             $user->setConfirm($data['confirm']);
