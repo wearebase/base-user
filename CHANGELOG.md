@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.7 - 2014-12-18
+
+### Additions
+
+- Add roles to User entity
+
 ## v0.2.6 - 2014-10-13
 
 ### Fixes
