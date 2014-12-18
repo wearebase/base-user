@@ -46,6 +46,7 @@ class UserNormalizerTest extends \PHPUnit_Framework_TestCase
             'email' => 'tester@devba.se',
             'password' => 'password',
             'favouriteStops' => ['3390Y4', '3390Y3'],
+            'roles' => [],
         ];
     }
 }
