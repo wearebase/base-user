@@ -16,6 +16,7 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
             'email' => $object->getEmail(),
             'password' => $object->getPassword(),
             'roles' => $object->getRoles(),
+            'associations' => $object->getAssociations(),
         ];
 
         $data = array_merge($data, $this->serializer->normalize(
@@ -45,6 +46,10 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
 
         if (isset($data['confirm'])) {
             $user->setConfirm($data['confirm']);
+        }
+
+        if (isset($data['associations'])) {
+            $user->setAssociations($data['associations']);
         }
 
         $user->setExtensions($this->serializer->denormalize(

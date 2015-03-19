@@ -12,6 +12,7 @@ class User
     protected $password;
     protected $confirm;
     protected $roles = [];
+    protected $associations = [];
 
     public function setId($id)
     {
@@ -66,5 +67,15 @@ class User
     public function getRoles()
     {
         return $this->roles;
+    }
+
+    public function setAssociations(array $associations)
+    {
+        $this->associations = $associations;
+    }
+
+    public function getAssociations()
+    {
+        return $this->associations;
     }
 }

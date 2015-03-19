@@ -47,6 +47,7 @@ class UserNormalizerTest extends \PHPUnit_Framework_TestCase
             'password' => 'password',
             'favouriteStops' => ['3390Y4', '3390Y3'],
             'roles' => [],
+            'associations' => [],
         ];
     }
 }
