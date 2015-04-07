@@ -7,6 +7,7 @@ Base\User\Entities\User:
             - Email:
                 message: 'validation.email.invalid'
                 groups: ['registration', 'deletion']
+                strict: true
         password:
             - NotBlank:
                 message: 'validation.password.blank'
