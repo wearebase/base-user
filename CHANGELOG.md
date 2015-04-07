@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.9 - 2015-04-07
+
+### Fixes
+
+- Stricter email validation on User object
+
+## v0.2.8 - 2015-03-19
+
+### Additions
+
+- User associations for use with third-party logins
+
 ## v0.2.7 - 2014-12-18
 
 ### Additions
