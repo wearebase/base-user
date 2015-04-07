@@ -58,6 +58,35 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertNotCount(0, $errors);
         $this->assertEquals('validation.email.invalid', $errors[0]->getMessage());
 
+        // Email address with spaces
+        $user = new User();
+        $user->setEmail('hello. world@devba. se');
+        $errors = $validator->validate($user, 'registration');
+        $this->assertNotCount(0, $errors);
+        $this->assertEquals('validation.email.invalid', $errors[0]->getMessage());
+
+        // Email address with invalid characters
+        $user = new User();
+        $user->setEmail('a"b(c)d,e:f;g<h>i[j\k]l@example.com');
+        $errors = $validator->validate($user, 'registration');
+        $this->assertNotCount(0, $errors);
+        $this->assertEquals('validation.email.invalid', $errors[0]->getMessage());
+
+        // Email address with escaped spaces
+        $user = new User();
+        $user->setEmail('this\\ still\\"not\\\\allowed@example.com');
+        $errors = $validator->validate($user, 'registration');
+        $this->assertNotCount(0, $errors);
+        $this->assertEquals('validation.email.invalid', $errors[0]->getMessage());
+
+        // Email address with valid characters
+        $user = new User();
+        $user->setPassword('password1');
+        $user->setConfirm('password1');
+        $user->setEmail("#!$%&'*+-/=?^_`{}|~@example.org");
+        $errors = $validator->validate($user, 'registration');
+        $this->assertCount(0, $errors);
+
         // Blank password
         $user = new User();
         $user->setEmail('example@devba.se');

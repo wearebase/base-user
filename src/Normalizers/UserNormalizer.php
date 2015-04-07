@@ -13,7 +13,7 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
     public function normalize($object, $format = null, array $context = [])
     {
         $data = [
-            'email' => $object->getEmail(),
+            'email' => trim($object->getEmail()),
             'password' => $object->getPassword(),
             'roles' => $object->getRoles(),
             'associations' => $object->getAssociations(),

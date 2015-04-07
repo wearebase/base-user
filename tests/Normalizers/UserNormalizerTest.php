@@ -32,6 +32,16 @@ class UserNormalizerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($this->getNormalized(), $data);
     }
 
+    public function testTrimEmailNormalize()
+    {
+        $user = new User();
+        $user->setEmail(' tester@devba.se ');
+        $user->setPassword('password');
+        $user->addExtension('favouriteStops', ['3390Y4', '3390Y3']);
+        $data = $this->serializer->normalize($user);
+        $this->assertEquals($this->getNormalized(), $data);
+    }
+
     public function testDenormalize()
     {
         $user = $this->serializer->denormalize($this->getNormalized(), 'Base\\User\\Entities\\User');
