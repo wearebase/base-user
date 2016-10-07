@@ -4,6 +4,7 @@ build/coverage
 build/logs
 build/pdepend
 build/phpdox
+composer.lock
 coverage/
 vendor/
 .idea
