@@ -17,7 +17,7 @@ Base\User\Entities\User:
                 minMessage: 'validation.password.short'
                 groups: ['registration']
         passwordMatching:
-            - 'True':
+            - 'IsTrue':
                 message: 'validation.password.mismatch'
                 groups: ['registration']
 
