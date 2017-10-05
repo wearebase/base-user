@@ -96,15 +96,12 @@ class PersonalDetailsTest extends \PHPUnit_Framework_TestCase
     public function postCodeProvider()
     {
         return [
+            ['', true],
+            [null, true],
             ['CW3 9SS', false],
-            ['SE5 0EG', false],
-            ['SE50EG', false],
-            ['SE5 0EG', false],
-            ['WC2H 7LT', false],
-            ['bh4 9ae', false],
-            ['WCC 7LT', true],
-            ['WC2 777', true],
-            ['WC2H', true],
+            ['WCC 7LT', false],
+            ['WC2H', false],
+            ['7250', false],
         ];
     }
 }
