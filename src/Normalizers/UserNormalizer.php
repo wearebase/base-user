@@ -34,7 +34,7 @@ class UserNormalizer extends SerializerAwareNormalizer implements NormalizerInte
 
     public function supportsNormalization($data, $format = null)
     {
-        return get_class($data) === 'Base\\User\\Entities\\User';
+        return is_object($data) && get_class($data) === 'Base\\User\\Entities\\User';
     }
 
     public function denormalize($data, $class, $format = null, array $context = [])
